@@ -47,9 +47,9 @@ function bLib:IncludeUnknown(strDirectory)
     if server then
         self:IncludeServer(strDirectory)
     elseif client then
-        self:IncludeServer(strDirectory)
+        self:IncludeClient(strDirectory)
     elseif shared then
-        self:IncludeServer(strDirectory)
+        self:IncludeShared(strDirectory)
     end
 end
 
