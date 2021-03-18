@@ -1,6 +1,5 @@
 bLib = {} -- bLib is just an example name, rename it to whatever the fuck you like
 bLib.MainDirectory = "blib" -- myaddon/lua/blib
-bLib.Font = "DermaLarge" -- pog
 bLib.SubDirectories = { -- Include order
     {"settings","shared"}, -- all files are downloaded to both realms
     {"sql","shared"}, -- all files are downloaded to both realms
