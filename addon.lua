@@ -68,23 +68,20 @@ function bLib:IncludeFolder(strFolderDirectory, strRealm)
         for _,strFileName in ipairs(tFiles) do
             self:IncludeClient(strFolderDirectory.."/"..strFileName)
         end
-        for _,strFolderName in ipairs(tFolders) do
-            self:IncludeFolder(strFolderDirectory.."/"..strFolderName, strRealm)
-        end
     elseif strRealm == "shared" then
         for _,strFileName in ipairs(tFiles) do
             self:IncludeShared(strFolderDirectory.."/"..strFileName)
         end
-        for _,strFolderName in ipairs(tFolders) do
-            self:IncludeFolder(strFolderDirectory.."/"..strFolderName, strRealm)
-        end
     elseif strRealm == "server" then
         for _,strFileName in ipairs(tFiles) do
-            self:IncludeShared(strFolderDirectory.."/"..strFileName)
+            self:IncludeServer(strFolderDirectory.."/"..strFileName)
         end
-        for _,strFolderName in ipairs(tFolders) do
-            self:IncludeFolder(strFolderDirectory.."/"..strFolderName, strRealm)
-        end
+    else
+	return
+    end
+
+    for _,strFolderName in ipairs(tFolders) do
+        self:IncludeFolder(strFolderDirectory.."/"..strFolderName, strRealm)
     end
 end
 
